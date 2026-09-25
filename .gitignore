@@ -1,0 +1,9 @@
+site/
+.cache/
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.DS_Store
+.idea/
+*.swp

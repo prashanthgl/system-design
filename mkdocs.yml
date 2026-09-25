@@ -1,0 +1,223 @@
+site_name: System Design for SRE Leads
+site_description: A depth-first system design curriculum for senior SRE and infrastructure tech leads preparing for top-tier interviews.
+site_author: pguledal
+site_url: https://pguledal.github.io/system-design/
+repo_url: https://github.com/pguledal/system-design
+repo_name: pguledal/system-design
+edit_uri: edit/main/docs/
+copyright: Personal study notes — built with MkDocs Material.
+
+theme:
+  name: material
+  language: en
+  icon:
+    repo: fontawesome/brands/github
+    logo: material/sitemap-outline
+  palette:
+    - media: "(prefers-color-scheme)"
+      toggle:
+        icon: material/brightness-auto
+        name: Switch to light mode
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/brightness-4
+        name: Switch to system preference
+  features:
+    - navigation.tabs
+    - navigation.tabs.sticky
+    - navigation.sections
+    - navigation.indexes
+    - navigation.top
+    - navigation.footer
+    - navigation.tracking
+    - toc.follow
+    - search.suggest
+    - search.highlight
+    - search.share
+    - content.code.copy
+    - content.code.annotate
+    - content.tabs.link
+    - content.tooltips
+    - content.action.edit
+  font:
+    text: Inter
+    code: JetBrains Mono
+
+extra_css:
+  - stylesheets/extra.css
+
+markdown_extensions:
+  - abbr
+  - admonition
+  - attr_list
+  - def_list
+  - footnotes
+  - md_in_html
+  - tables
+  - toc:
+      permalink: true
+      toc_depth: 3
+  - pymdownx.arithmatex:
+      generic: true
+  - pymdownx.betterem
+  - pymdownx.caret
+  - pymdownx.details
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+  - pymdownx.highlight:
+      anchor_linenums: true
+      line_spans: __span
+      pygments_lang_class: true
+  - pymdownx.inlinehilite
+  - pymdownx.keys
+  - pymdownx.mark
+  - pymdownx.smartsymbols
+  - pymdownx.snippets
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.tasklist:
+      custom_checkbox: true
+  - pymdownx.tilde
+
+plugins:
+  - search:
+      separator: '[\s\u200b\-_,:!=\[\]()"`/]+|\.(?!\d)|&[lg]t;|(?!\b)(?=[A-Z][a-z])'
+  - tags
+
+extra:
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/pguledal/system-design
+  generator: false
+
+nav:
+  - Home:
+      - index.md
+      - How to Prepare: how-to-prepare.md
+  - Fundamentals:
+      - fundamentals/index.md
+      - Networking & Traffic:
+          - F01 Networking Foundations: fundamentals/f01-networking-foundations.md
+          - F02 DNS & Global Traffic: fundamentals/f02-dns-traffic-management.md
+          - F03 Load Balancing: fundamentals/f03-load-balancing.md
+          - F05 CDN & Edge: fundamentals/f05-cdn-edge.md
+      - Data & Consistency:
+          - F04 Caching: fundamentals/f04-caching.md
+          - F06 Partitioning & Sharding: fundamentals/f06-partitioning-sharding.md
+          - F07 Replication & Consistency: fundamentals/f07-replication-consistency.md
+          - F08 CAP & PACELC: fundamentals/f08-cap-pacelc.md
+          - F09 Consensus: fundamentals/f09-consensus.md
+          - F10 Distributed Transactions: fundamentals/f10-distributed-transactions.md
+          - F11 Idempotency & Exactly-Once: fundamentals/f11-idempotency.md
+          - F19 Concurrency Control: fundamentals/f19-concurrency-control.md
+          - F20 Time, Clocks & Ordering: fundamentals/f20-time-clocks-ordering.md
+      - Storage & Messaging:
+          - F12 Queues & Streams: fundamentals/f12-queues-streams.md
+          - F13 Storage Engines: fundamentals/f13-storage-engines.md
+          - F14 SQL vs NoSQL: fundamentals/f14-sql-vs-nosql.md
+          - F15 Object & Blob Storage: fundamentals/f15-object-storage.md
+          - F16 Search & Indexing: fundamentals/f16-search-indexing.md
+          - F21 Probabilistic Structures: fundamentals/f21-probabilistic-data-structures.md
+      - Reliability & Operations:
+          - F17 Rate Limiting & Shedding: fundamentals/f17-rate-limiting-load-shedding.md
+          - F18 Resilience Patterns: fundamentals/f18-resilience-patterns.md
+          - F22 Observability: fundamentals/f22-observability-fundamentals.md
+          - F23 SLI/SLO & Error Budgets: fundamentals/f23-slo-error-budgets.md
+          - F24 Capacity Planning: fundamentals/f24-capacity-planning.md
+          - F25 Deployment & Release Safety: fundamentals/f25-deployment-release-safety.md
+          - F26 Multi-Region & DR: fundamentals/f26-multi-region-dr.md
+          - F27 Security in Design: fundamentals/f27-security-design.md
+          - F28 Cost Engineering: fundamentals/f28-cost-engineering.md
+  - Case Studies:
+      - case-studies/index.md
+      - A. Core Classics:
+          - 01 URL Shortener: case-studies/01-url-shortener.md
+          - 02 Pastebin: case-studies/02-pastebin.md
+          - 03 Distributed Rate Limiter: case-studies/03-rate-limiter.md
+          - 04 Unique ID Generator: case-studies/04-unique-id-generator.md
+          - 05 Distributed Key-Value Store: case-studies/05-key-value-store.md
+          - 06 Web Crawler: case-studies/06-web-crawler.md
+          - 07 Typeahead & Autocomplete: case-studies/07-typeahead-autocomplete.md
+          - 08 Notification System: case-studies/08-notification-system.md
+      - B. Social & Messaging:
+          - 09 News Feed / Timeline: case-studies/09-news-feed.md
+          - 10 Chat System: case-studies/10-chat-system.md
+          - 11 Live Comments at Scale: case-studies/11-live-comments.md
+          - 12 Distributed Search Engine: case-studies/12-distributed-search.md
+          - 13 Email Service: case-studies/13-email-service.md
+          - 14 Content Moderation: case-studies/14-content-moderation.md
+      - C. Media & Storage:
+          - 15 YouTube / Video Platform: case-studies/15-youtube-video-platform.md
+          - 16 Netflix Streaming: case-studies/16-netflix-streaming.md
+          - 17 Google Drive / Dropbox: case-studies/17-google-drive.md
+          - 18 S3-style Object Store: case-studies/18-object-store-s3.md
+          - 19 Photo Store (Instagram): case-studies/19-photo-store-instagram.md
+          - 20 Backup & Deduplication: case-studies/20-backup-dedup.md
+      - D. Geo & Transactional:
+          - 21 Proximity Service: case-studies/21-proximity-service.md
+          - 22 Ride-Hailing Dispatch: case-studies/22-ride-hailing.md
+          - 23 Google Maps / Routing: case-studies/23-google-maps.md
+          - 24 Ticket Booking: case-studies/24-ticket-booking.md
+          - 25 Hotel Reservation: case-studies/25-hotel-reservation.md
+          - 26 E-commerce Checkout: case-studies/26-ecommerce-checkout.md
+          - 27 Payment System & Wallet: case-studies/27-payment-system.md
+          - 28 Stock Exchange: case-studies/28-stock-exchange.md
+          - 29 Fraud Detection: case-studies/29-fraud-detection.md
+      - E. Infrastructure & Platform:
+          - 30 Message Queue (Kafka): case-studies/30-message-queue-kafka.md
+          - 31 Metrics & Monitoring: case-studies/31-metrics-monitoring.md
+          - 32 Distributed Logging: case-studies/32-distributed-logging.md
+          - 33 Distributed Tracing: case-studies/33-distributed-tracing.md
+          - 34 Alerting & On-Call Paging: case-studies/34-alerting-paging.md
+          - 35 Distributed Cache Service: case-studies/35-distributed-cache.md
+          - 36 CDN Design: case-studies/36-cdn-design.md
+          - 37 Distributed Job Scheduler: case-studies/37-job-scheduler.md
+          - 38 Container Orchestrator: case-studies/38-container-orchestrator.md
+          - 39 CI/CD Platform: case-studies/39-cicd-platform.md
+          - 40 Feature Flag Service: case-studies/40-feature-flag-service.md
+      - F. Stretch Designs:
+          - 41 Collaborative Editor: case-studies/41-collaborative-editor.md
+          - 42 Ad Click Aggregation: case-studies/42-ad-click-aggregation.md
+          - 43 Web Analytics: case-studies/43-web-analytics.md
+          - 44 Leaderboard: case-studies/44-leaderboard.md
+          - 45 API Gateway & Service Mesh: case-studies/45-api-gateway-service-mesh.md
+          - 46 Coordination Service: case-studies/46-coordination-service.md
+          - 47 Secrets Management: case-studies/47-secrets-management.md
+          - 48 ML Inference Serving: case-studies/48-ml-inference-serving.md
+  - SRE Rounds:
+      - sre/index.md
+      - S01 SLO Design: sre/s01-slo-design.md
+      - S02 Multi-Region Active-Active: sre/s02-multi-region-active-active.md
+      - S03 Zero-Downtime Migration: sre/s03-zero-downtime-migration.md
+      - S04 Capacity for 10x Growth: sre/s04-capacity-planning-10x.md
+      - S05 Load Shedding & Brownout: sre/s05-load-shedding-brownout.md
+      - S06 Incident Response System: sre/s06-incident-response-system.md
+      - S07 Chaos Engineering Platform: sre/s07-chaos-engineering-platform.md
+      - S08 Deployment Safety at Scale: sre/s08-deployment-safety.md
+      - S09 Cell-Based Architecture: sre/s09-cell-based-architecture.md
+      - S10 Cost & Efficiency Review: sre/s10-cost-efficiency-review.md
+      - S11 Debugging p99 Regression: sre/s11-latency-debugging.md
+      - S12 Auto-Remediation System: sre/s12-auto-remediation.md
+  - Cheat Sheets:
+      - cheatsheets/index.md
+      - Numbers & Estimation: cheatsheets/numbers.md
+      - Interview Framework: cheatsheets/interview-framework.md
+      - Decision Trees: cheatsheets/decision-trees.md
+      - Review Checklists: cheatsheets/checklists.md
+      - Papers & Reading: cheatsheets/papers.md

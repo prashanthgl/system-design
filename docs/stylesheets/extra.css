@@ -1,0 +1,122 @@
+/* ---- Layout ---------------------------------------------------------- */
+
+:root {
+  --md-text-font: "Inter", -apple-system, BlinkMacSystemFont, sans-serif;
+  --sd-accent: #5b6ee1;
+}
+
+.md-grid {
+  max-width: 68rem;
+}
+
+/* Denser tables — these pages are table-heavy. */
+.md-typeset table:not([class]) {
+  font-size: 0.72rem;
+  line-height: 1.5;
+}
+
+.md-typeset table:not([class]) th {
+  background-color: var(--md-default-fg-color--lightest);
+  font-weight: 600;
+}
+
+/* ---- Difficulty / status pills --------------------------------------- */
+
+.pill {
+  display: inline-block;
+  padding: 0.1rem 0.5rem;
+  border-radius: 1rem;
+  font-size: 0.62rem;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  vertical-align: middle;
+}
+
+.pill-easy    { background: #1b5e2020; color: #2e7d32; }
+.pill-medium  { background: #e6510020; color: #e65100; }
+.pill-hard    { background: #b71c1c20; color: #c62828; }
+.pill-core    { background: #0d47a120; color: #1565c0; }
+
+[data-md-color-scheme="slate"] .pill-easy   { color: #81c784; }
+[data-md-color-scheme="slate"] .pill-medium { color: #ffb74d; }
+[data-md-color-scheme="slate"] .pill-hard   { color: #e57373; }
+[data-md-color-scheme="slate"] .pill-core   { color: #64b5f6; }
+
+/* ---- Gotcha callout emphasis ----------------------------------------- */
+
+.md-typeset .admonition.danger,
+.md-typeset details.danger {
+  border-left-width: 0.2rem;
+}
+
+/* "gotcha" custom admonition */
+:root {
+  --md-admonition-icon--gotcha: url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 14h-2V9h2m0 9h-2v-2h2M1 21h22L12 2 1 21Z"/></svg>');
+}
+
+.md-typeset .admonition.gotcha,
+.md-typeset details.gotcha {
+  border-color: #ff9100;
+}
+
+.md-typeset .gotcha > .admonition-title,
+.md-typeset .gotcha > summary {
+  background-color: #ff910019;
+}
+
+.md-typeset .gotcha > .admonition-title::before,
+.md-typeset .gotcha > summary::before {
+  background-color: #ff9100;
+  -webkit-mask-image: var(--md-admonition-icon--gotcha);
+          mask-image: var(--md-admonition-icon--gotcha);
+}
+
+/* "interview" custom admonition */
+:root {
+  --md-admonition-icon--interview: url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 2H4a2 2 0 0 0-2 2v18l4-4h14a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2Z"/></svg>');
+}
+
+.md-typeset .admonition.interview,
+.md-typeset details.interview {
+  border-color: #7c4dff;
+}
+
+.md-typeset .interview > .admonition-title,
+.md-typeset .interview > summary {
+  background-color: #7c4dff19;
+}
+
+.md-typeset .interview > .admonition-title::before,
+.md-typeset .interview > summary::before {
+  background-color: #7c4dff;
+  -webkit-mask-image: var(--md-admonition-icon--interview);
+          mask-image: var(--md-admonition-icon--interview);
+}
+
+/* ---- Cards on index pages -------------------------------------------- */
+
+.grid.cards > ul > li {
+  border-radius: 0.4rem;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.grid.cards > ul > li:hover {
+  border-color: var(--sd-accent);
+  box-shadow: 0 0 0.4rem rgba(0, 0, 0, 0.08);
+}
+
+/* ---- Numbers cheat sheet: monospace alignment ------------------------ */
+
+.numbers-table td:nth-child(2),
+.numbers-table td:nth-child(3) {
+  font-family: var(--md-code-font);
+  text-align: right;
+  white-space: nowrap;
+}
+
+/* ---- Mermaid ---------------------------------------------------------- */
+
+.mermaid {
+  text-align: center;
+}
