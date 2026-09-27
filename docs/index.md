@@ -1,11 +1,25 @@
+<div class="sd-hero" markdown>
+
 # System Design for SRE Leads
 
-**A depth-first system design curriculum built for a senior SRE / infrastructure Tech Lead preparing for top-tier interviews — 28 fundamentals, 48 case studies, and 12 SRE-specific rounds, every page carrying an explicit operational lens.**
+**A depth-first system design curriculum built for a senior SRE / infrastructure Tech Lead preparing for top-tier interviews.**
 
 Most system design material optimizes for "draw boxes, add a cache, mention sharding." This site
 is written for someone who has been paged for the boxes falling over. Every case study has a
 dedicated **SRE Lens** section — SLIs/SLOs, rollout risk, capacity model, runbook notes — and a
 **Gotchas & Corner Cases** section that is, deliberately, the highest-value part of the page.
+
+<div class="sd-stats" markdown>
+- <span class="sd-stat-num">28</span><span class="sd-stat-label">Fundamentals</span>
+- <span class="sd-stat-num">48</span><span class="sd-stat-label">Case Studies</span>
+- <span class="sd-stat-num">12</span><span class="sd-stat-label">SRE Rounds</span>
+- <span class="sd-stat-num">5</span><span class="sd-stat-label">Cheat Sheets</span>
+</div>
+
+[:material-rocket-launch-outline: Start the 8-week plan](how-to-prepare.md){ .md-button .md-button--primary }
+[:material-view-list-outline: Full site index](sitemap.md){ .md-button }
+
+</div>
 
 <div class="grid cards" markdown>
 

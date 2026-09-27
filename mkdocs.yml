@@ -40,6 +40,9 @@ theme:
     - navigation.top
     - navigation.footer
     - navigation.tracking
+    - navigation.instant
+    - navigation.instant.progress
+    - navigation.path
     - toc.follow
     - search.suggest
     - search.highlight
@@ -110,6 +113,7 @@ nav:
   - Home:
       - index.md
       - How to Prepare: how-to-prepare.md
+      - Full Site Index: sitemap.md
   - Fundamentals:
       - fundamentals/index.md
       - Networking & Traffic:

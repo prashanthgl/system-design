@@ -3,10 +3,70 @@
 :root {
   --md-text-font: "Inter", -apple-system, BlinkMacSystemFont, sans-serif;
   --sd-accent: #5b6ee1;
+  --sd-accent-2: #7c4dff;
 }
 
 .md-grid {
   max-width: 68rem;
+}
+
+/* ---- Home page hero ---------------------------------------------------- */
+
+.sd-hero {
+  padding: 1.4rem 1.8rem 1.8rem;
+  margin: 0 0 1.5rem;
+  border-radius: 0.6rem;
+  background: linear-gradient(135deg, rgba(91, 110, 225, 0.12), rgba(124, 77, 255, 0.08));
+  border: 1px solid rgba(91, 110, 225, 0.18);
+}
+
+.sd-hero h1 {
+  margin-top: 0;
+  background: linear-gradient(120deg, var(--sd-accent), var(--sd-accent-2));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.md-typeset .sd-stats ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.6rem;
+  margin: 1.2rem 0 1.4rem;
+  padding: 0;
+  list-style: none;
+}
+
+.md-typeset .sd-stats li {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.1;
+}
+
+.sd-stat-num {
+  font-size: 1.9rem;
+  font-weight: 700;
+  color: var(--sd-accent);
+}
+
+[data-md-color-scheme="slate"] .sd-stat-num {
+  color: #8b9bff;
+}
+
+.sd-stat-label {
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  opacity: 0.75;
+}
+
+.sd-hero .md-button {
+  margin: 0.3rem 0.6rem 0.3rem 0;
+}
+
+[data-md-color-scheme="slate"] .sd-hero {
+  background: linear-gradient(135deg, rgba(91, 110, 225, 0.16), rgba(124, 77, 255, 0.12));
+  border-color: rgba(139, 155, 255, 0.25);
 }
 
 /* Denser tables — these pages are table-heavy. */
@@ -97,13 +157,15 @@
 /* ---- Cards on index pages -------------------------------------------- */
 
 .grid.cards > ul > li {
-  border-radius: 0.4rem;
-  transition: border-color 0.2s, box-shadow 0.2s;
+  border-radius: 0.5rem;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06);
+  transition: border-color 0.2s, box-shadow 0.2s, transform 0.2s;
 }
 
 .grid.cards > ul > li:hover {
   border-color: var(--sd-accent);
-  box-shadow: 0 0 0.4rem rgba(0, 0, 0, 0.08);
+  box-shadow: 0 0.3rem 0.9rem rgba(0, 0, 0, 0.1);
+  transform: translateY(-2px);
 }
 
 /* ---- Numbers cheat sheet: monospace alignment ------------------------ */

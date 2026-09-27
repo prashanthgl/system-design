@@ -1,5 +1,9 @@
 # System Design for Senior SRE / Tech Lead Interviews
 
+**[Browse the live site &rarr;](https://prashanthgl.github.io/system-design/)** — every table below links
+directly to its page; the `Status` column is a personal study tracker (todo → drafted → drilled →
+solid), not a content-availability flag — all 88 pages are already written.
+
 A structured, depth-first curriculum for preparing for system design rounds at top-tier
 companies (FAANG+, Stripe, Databricks, Cloudflare, Snowflake, OpenAI, etc.).
 
@@ -81,34 +85,34 @@ These are the primitives every case study composes. Get these solid first.
 
 | # | Topic | Key depth to reach | Status |
 |---|---|---|---|
-| F01 | Networking Foundations | TCP vs QUIC, TLS handshake cost, connection pooling, keep-alive, head-of-line blocking, MTU/MSS | todo |
-| F02 | DNS & Global Traffic Management | Anycast, GeoDNS, TTL trade-offs, DNS failover lag, health-checked GSLB | todo |
-| F03 | Load Balancing | L4 vs L7, consistent hashing, maglev, least-conn vs P2C, connection draining, LB as SPOF | todo |
-| F04 | Caching | Cache-aside/write-through/write-behind, TTL + jitter, stampede control, hot keys, negative caching, invalidation | todo |
-| F05 | CDN & Edge | Origin shielding, cache keys, purge propagation, edge compute, signed URLs | todo |
-| F06 | Data Partitioning / Sharding | Range vs hash vs directory, consistent hashing + vnodes, resharding online, hot shard mitigation | todo |
-| F07 | Replication & Consistency | Sync/async/semi-sync, quorum (R+W>N), read-your-writes, monotonic reads, replication lag effects | todo |
-| F08 | CAP, PACELC & Consistency Models | Linearizable → serializable → SI → RC → eventual; what each costs in latency | todo |
-| F09 | Consensus | Raft/Paxos leader election, log replication, membership change, why you rarely write your own | todo |
-| F10 | Distributed Transactions | 2PC and its blocking problem, Saga + compensations, outbox pattern, TCC | todo |
-| F11 | Idempotency & Exactly-Once | Idempotency keys, dedup windows, effectively-once vs exactly-once semantics | todo |
-| F12 | Message Queues & Streams | Queue vs log, at-least/at-most/exactly-once, ordering guarantees, consumer groups, backpressure, DLQ | todo |
-| F13 | Storage Engines | B-tree vs LSM, write/read/space amplification, compaction, WAL, fsync durability | todo |
-| F14 | SQL vs NoSQL Selection | Access-pattern-driven choice, secondary indexes, materialized views, when Postgres is enough | todo |
-| F15 | Object & Blob Storage | S3 semantics, multipart upload, storage classes, erasure coding vs replication | todo |
-| F16 | Search & Indexing | Inverted index, tokenization, TF-IDF/BM25, near-real-time indexing, index sharding | todo |
-| F17 | Rate Limiting & Load Shedding | Token/leaky bucket, sliding window, distributed counters, adaptive concurrency limits, priority shedding | todo |
-| F18 | Resilience Patterns | Timeouts, retries + exponential backoff + jitter, retry budgets, circuit breakers, bulkheads, hedged requests | todo |
-| F19 | Concurrency Control | Optimistic vs pessimistic locking, distributed locks + fencing tokens, lease expiry hazards | todo |
-| F20 | Time, Clocks & Ordering | NTP skew, logical clocks, vector clocks, TrueTime/HLC, why timestamps aren't IDs | todo |
-| F21 | Probabilistic Data Structures | Bloom/Cuckoo filters, HyperLogLog, Count-Min Sketch, t-digest for percentiles | todo |
-| F22 | Observability Fundamentals | RED/USE methods, metric cardinality, sampling, trace propagation, log volume economics | todo |
-| F23 | SLI / SLO / Error Budgets | Choosing good SLIs, multi-window multi-burn-rate alerting, error budget policy | todo |
-| F24 | Capacity Planning | Little's Law, utilization vs latency knee, headroom targets, N+1 / N+2 regional planning | todo |
-| F25 | Deployment & Release Safety | Blue/green, canary + automated analysis, feature flags, schema migration (expand/contract), rollback | todo |
-| F26 | Multi-Region & DR | Active-active vs active-passive, RTO/RPO, data residency, split-brain, failover drills | todo |
-| F27 | Security in Design | AuthN/AuthZ, OAuth2/OIDC, mTLS, secrets management, encryption at rest/in transit, tenant isolation | todo |
-| F28 | Cost Engineering | $/request modelling, egress traps, storage tiering, spot/preemptible strategy, right-sizing | todo |
+| F01 | [Networking Foundations](docs/fundamentals/f01-networking-foundations.md) | TCP vs QUIC, TLS handshake cost, connection pooling, keep-alive, head-of-line blocking, MTU/MSS | todo |
+| F02 | [DNS & Global Traffic Management](docs/fundamentals/f02-dns-traffic-management.md) | Anycast, GeoDNS, TTL trade-offs, DNS failover lag, health-checked GSLB | todo |
+| F03 | [Load Balancing](docs/fundamentals/f03-load-balancing.md) | L4 vs L7, consistent hashing, maglev, least-conn vs P2C, connection draining, LB as SPOF | todo |
+| F04 | [Caching](docs/fundamentals/f04-caching.md) | Cache-aside/write-through/write-behind, TTL + jitter, stampede control, hot keys, negative caching, invalidation | todo |
+| F05 | [CDN & Edge](docs/fundamentals/f05-cdn-edge.md) | Origin shielding, cache keys, purge propagation, edge compute, signed URLs | todo |
+| F06 | [Data Partitioning / Sharding](docs/fundamentals/f06-partitioning-sharding.md) | Range vs hash vs directory, consistent hashing + vnodes, resharding online, hot shard mitigation | todo |
+| F07 | [Replication & Consistency](docs/fundamentals/f07-replication-consistency.md) | Sync/async/semi-sync, quorum (R+W>N), read-your-writes, monotonic reads, replication lag effects | todo |
+| F08 | [CAP, PACELC & Consistency Models](docs/fundamentals/f08-cap-pacelc.md) | Linearizable → serializable → SI → RC → eventual; what each costs in latency | todo |
+| F09 | [Consensus](docs/fundamentals/f09-consensus.md) | Raft/Paxos leader election, log replication, membership change, why you rarely write your own | todo |
+| F10 | [Distributed Transactions](docs/fundamentals/f10-distributed-transactions.md) | 2PC and its blocking problem, Saga + compensations, outbox pattern, TCC | todo |
+| F11 | [Idempotency & Exactly-Once](docs/fundamentals/f11-idempotency.md) | Idempotency keys, dedup windows, effectively-once vs exactly-once semantics | todo |
+| F12 | [Message Queues & Streams](docs/fundamentals/f12-queues-streams.md) | Queue vs log, at-least/at-most/exactly-once, ordering guarantees, consumer groups, backpressure, DLQ | todo |
+| F13 | [Storage Engines](docs/fundamentals/f13-storage-engines.md) | B-tree vs LSM, write/read/space amplification, compaction, WAL, fsync durability | todo |
+| F14 | [SQL vs NoSQL Selection](docs/fundamentals/f14-sql-vs-nosql.md) | Access-pattern-driven choice, secondary indexes, materialized views, when Postgres is enough | todo |
+| F15 | [Object & Blob Storage](docs/fundamentals/f15-object-storage.md) | S3 semantics, multipart upload, storage classes, erasure coding vs replication | todo |
+| F16 | [Search & Indexing](docs/fundamentals/f16-search-indexing.md) | Inverted index, tokenization, TF-IDF/BM25, near-real-time indexing, index sharding | todo |
+| F17 | [Rate Limiting & Load Shedding](docs/fundamentals/f17-rate-limiting-load-shedding.md) | Token/leaky bucket, sliding window, distributed counters, adaptive concurrency limits, priority shedding | todo |
+| F18 | [Resilience Patterns](docs/fundamentals/f18-resilience-patterns.md) | Timeouts, retries + exponential backoff + jitter, retry budgets, circuit breakers, bulkheads, hedged requests | todo |
+| F19 | [Concurrency Control](docs/fundamentals/f19-concurrency-control.md) | Optimistic vs pessimistic locking, distributed locks + fencing tokens, lease expiry hazards | todo |
+| F20 | [Time, Clocks & Ordering](docs/fundamentals/f20-time-clocks-ordering.md) | NTP skew, logical clocks, vector clocks, TrueTime/HLC, why timestamps aren't IDs | todo |
+| F21 | [Probabilistic Data Structures](docs/fundamentals/f21-probabilistic-data-structures.md) | Bloom/Cuckoo filters, HyperLogLog, Count-Min Sketch, t-digest for percentiles | todo |
+| F22 | [Observability Fundamentals](docs/fundamentals/f22-observability-fundamentals.md) | RED/USE methods, metric cardinality, sampling, trace propagation, log volume economics | todo |
+| F23 | [SLI / SLO / Error Budgets](docs/fundamentals/f23-slo-error-budgets.md) | Choosing good SLIs, multi-window multi-burn-rate alerting, error budget policy | todo |
+| F24 | [Capacity Planning](docs/fundamentals/f24-capacity-planning.md) | Little's Law, utilization vs latency knee, headroom targets, N+1 / N+2 regional planning | todo |
+| F25 | [Deployment & Release Safety](docs/fundamentals/f25-deployment-release-safety.md) | Blue/green, canary + automated analysis, feature flags, schema migration (expand/contract), rollback | todo |
+| F26 | [Multi-Region & DR](docs/fundamentals/f26-multi-region-dr.md) | Active-active vs active-passive, RTO/RPO, data residency, split-brain, failover drills | todo |
+| F27 | [Security in Design](docs/fundamentals/f27-security-design.md) | AuthN/AuthZ, OAuth2/OIDC, mTLS, secrets management, encryption at rest/in transit, tenant isolation | todo |
+| F28 | [Cost Engineering](docs/fundamentals/f28-cost-engineering.md) | $/request modelling, egress traps, storage tiering, spot/preemptible strategy, right-sizing | todo |
 
 ---
 
@@ -121,79 +125,79 @@ outcome of the interview** — the parts you cannot hand-wave.
 
 | # | Design | Deep dives that matter | Status |
 |---|---|---|---|
-| 01 | **URL Shortener (TinyURL / bit.ly)** | Key generation (counter vs hash vs pre-gen pool), collision handling, 301 vs 302 and its analytics impact, read-heavy caching, custom aliases, link expiry & GC | todo |
-| 02 | **Pastebin / Text Sharing** | Blob vs DB split, TTL & expiry sweeper, size limits, abuse/spam handling, cold-storage tiering | todo |
-| 03 | **Distributed Rate Limiter** | Algorithm choice, per-user vs per-IP vs per-tenant, Redis vs local+gossip sync, clock skew, fail-open vs fail-closed, response headers | todo |
-| 04 | **Unique ID Generator (Snowflake)** | Monotonicity, clock rollback handling, node ID assignment, k-sortability vs UUIDv7, ID leakage/enumeration | todo |
-| 05 | **Distributed Key-Value Store (Dynamo-style)** | Consistent hashing + vnodes, quorum tuning, hinted handoff, Merkle-tree anti-entropy, vector clocks vs LWW, gossip membership | todo |
-| 06 | **Web Crawler** | Frontier design, politeness & robots.txt, URL dedup at scale (Bloom), trap detection, freshness/recrawl scheduling, distributed coordination | todo |
-| 07 | **Typeahead / Search Autocomplete** | Trie sharding + serialization, top-k per prefix, real-time vs batch index updates, personalization, spell correction, edge caching | todo |
-| 08 | **Notification System (push/SMS/email)** | Fan-out, per-provider adapters & retries, dedup, user preferences & quiet hours, priority queues, delivery tracking, third-party outage handling | todo |
+| 01 | **[URL Shortener (TinyURL / bit.ly)](docs/case-studies/01-url-shortener.md)** | Key generation (counter vs hash vs pre-gen pool), collision handling, 301 vs 302 and its analytics impact, read-heavy caching, custom aliases, link expiry & GC | todo |
+| 02 | **[Pastebin / Text Sharing](docs/case-studies/02-pastebin.md)** | Blob vs DB split, TTL & expiry sweeper, size limits, abuse/spam handling, cold-storage tiering | todo |
+| 03 | **[Distributed Rate Limiter](docs/case-studies/03-rate-limiter.md)** | Algorithm choice, per-user vs per-IP vs per-tenant, Redis vs local+gossip sync, clock skew, fail-open vs fail-closed, response headers | todo |
+| 04 | **[Unique ID Generator (Snowflake)](docs/case-studies/04-unique-id-generator.md)** | Monotonicity, clock rollback handling, node ID assignment, k-sortability vs UUIDv7, ID leakage/enumeration | todo |
+| 05 | **[Distributed Key-Value Store (Dynamo-style)](docs/case-studies/05-key-value-store.md)** | Consistent hashing + vnodes, quorum tuning, hinted handoff, Merkle-tree anti-entropy, vector clocks vs LWW, gossip membership | todo |
+| 06 | **[Web Crawler](docs/case-studies/06-web-crawler.md)** | Frontier design, politeness & robots.txt, URL dedup at scale (Bloom), trap detection, freshness/recrawl scheduling, distributed coordination | todo |
+| 07 | **[Typeahead / Search Autocomplete](docs/case-studies/07-typeahead-autocomplete.md)** | Trie sharding + serialization, top-k per prefix, real-time vs batch index updates, personalization, spell correction, edge caching | todo |
+| 08 | **[Notification System (push/SMS/email)](docs/case-studies/08-notification-system.md)** | Fan-out, per-provider adapters & retries, dedup, user preferences & quiet hours, priority queues, delivery tracking, third-party outage handling | todo |
 
 ### B. Social, Feed & Messaging
 
 | # | Design | Deep dives that matter | Status |
 |---|---|---|---|
-| 09 | **News Feed / Timeline (Twitter, Facebook)** | Fan-out-on-write vs read vs hybrid, celebrity problem, feed ranking pipeline, pagination with changing data, cache warming | todo |
-| 10 | **Chat / Messaging (WhatsApp, Slack)** | WebSocket connection management at millions of conns, presence, message ordering & delivery receipts, offline queue, group fan-out, E2E encryption impact | todo |
-| 11 | **Live Comments / Reactions at Scale** | Pub/sub fan-out, connection sharding, backpressure on hot streams, sampling for display, ordering vs latency | todo |
-| 12 | **Twitter Search / Distributed Search Engine** | Index sharding (doc vs term), real-time index + segment merge, query fan-out & scatter-gather tail latency, relevance ranking | todo |
-| 13 | **Email Service (Gmail-like)** | Mailbox storage & threading, full-text search index, SMTP ingest + spam pipeline, per-user quota, sync protocol (IMAP/push) | todo |
-| 14 | **Content Moderation Pipeline** | Sync vs async classification, ML inference budget, human-review queue prioritization, appeal workflow, hash-matching (PhotoDNA-style) | todo |
+| 09 | **[News Feed / Timeline (Twitter, Facebook)](docs/case-studies/09-news-feed.md)** | Fan-out-on-write vs read vs hybrid, celebrity problem, feed ranking pipeline, pagination with changing data, cache warming | todo |
+| 10 | **[Chat / Messaging (WhatsApp, Slack)](docs/case-studies/10-chat-system.md)** | WebSocket connection management at millions of conns, presence, message ordering & delivery receipts, offline queue, group fan-out, E2E encryption impact | todo |
+| 11 | **[Live Comments / Reactions at Scale](docs/case-studies/11-live-comments.md)** | Pub/sub fan-out, connection sharding, backpressure on hot streams, sampling for display, ordering vs latency | todo |
+| 12 | **[Twitter Search / Distributed Search Engine](docs/case-studies/12-distributed-search.md)** | Index sharding (doc vs term), real-time index + segment merge, query fan-out & scatter-gather tail latency, relevance ranking | todo |
+| 13 | **[Email Service (Gmail-like)](docs/case-studies/13-email-service.md)** | Mailbox storage & threading, full-text search index, SMTP ingest + spam pipeline, per-user quota, sync protocol (IMAP/push) | todo |
+| 14 | **[Content Moderation Pipeline](docs/case-studies/14-content-moderation.md)** | Sync vs async classification, ML inference budget, human-review queue prioritization, appeal workflow, hash-matching (PhotoDNA-style) | todo |
 
 ### C. Media & Storage
 
 | # | Design | Deep dives that matter | Status |
 |---|---|---|---|
-| 15 | **YouTube / Video Platform** | Upload → transcode pipeline (chunked, parallel), ABR/HLS packaging, CDN strategy & cache hit ratio, thumbnail/metadata service, view-count aggregation | todo |
-| 16 | **Netflix-style Streaming** | Open Connect edge appliances, pre-positioning content, playback manifest, per-title encoding, recommendation serving, chaos-tested failover | todo |
-| 17 | **Google Drive / Dropbox** | Chunking + content-addressed dedup, delta sync, conflict resolution, metadata service scale, sharing/ACL model, client-side watcher | todo |
-| 18 | **S3-style Object Store** | Namespace partitioning, erasure coding & durability math (11 nines), multipart upload, consistency model, background repair, lifecycle tiering | todo |
-| 19 | **Photo/Media Store (Instagram)** | Write path & image variants, haystack-style small-file problem, CDN + signed URLs, EXIF/privacy, cold storage migration | todo |
-| 20 | **Backup & Deduplication System** | Variable-length chunking, dedup index scale, incremental-forever, restore latency, encryption + dedup tension, immutability/ransomware protection | todo |
+| 15 | **[YouTube / Video Platform](docs/case-studies/15-youtube-video-platform.md)** | Upload → transcode pipeline (chunked, parallel), ABR/HLS packaging, CDN strategy & cache hit ratio, thumbnail/metadata service, view-count aggregation | todo |
+| 16 | **[Netflix-style Streaming](docs/case-studies/16-netflix-streaming.md)** | Open Connect edge appliances, pre-positioning content, playback manifest, per-title encoding, recommendation serving, chaos-tested failover | todo |
+| 17 | **[Google Drive / Dropbox](docs/case-studies/17-google-drive.md)** | Chunking + content-addressed dedup, delta sync, conflict resolution, metadata service scale, sharing/ACL model, client-side watcher | todo |
+| 18 | **[S3-style Object Store](docs/case-studies/18-object-store-s3.md)** | Namespace partitioning, erasure coding & durability math (11 nines), multipart upload, consistency model, background repair, lifecycle tiering | todo |
+| 19 | **[Photo/Media Store (Instagram)](docs/case-studies/19-photo-store-instagram.md)** | Write path & image variants, haystack-style small-file problem, CDN + signed URLs, EXIF/privacy, cold storage migration | todo |
+| 20 | **[Backup & Deduplication System](docs/case-studies/20-backup-dedup.md)** | Variable-length chunking, dedup index scale, incremental-forever, restore latency, encryption + dedup tension, immutability/ransomware protection | todo |
 
 ### D. Geo, Marketplace & Transactional
 
 | # | Design | Deep dives that matter | Status |
 |---|---|---|---|
-| 21 | **Proximity Service / Yelp (Nearby)** | Geohash vs quadtree vs S2/H3, boundary problem, index update rate, ranking + filtering, read replica geo-distribution | todo |
-| 22 | **Uber / Ride-Hailing Dispatch** | Driver location ingest (high write rate), matching algorithm & latency budget, surge computation, state machine for trips, ETA service, exactly-once dispatch | todo |
-| 23 | **Google Maps / Routing** | Map tiling & serving, graph partitioning, contraction hierarchies, live traffic ingestion, ETA modelling, offline map packs | todo |
-| 24 | **Ticketmaster / Event Booking** | Inventory reservation & holds, oversell prevention, virtual waiting room, thundering herd on drop, payment coordination, idempotent booking | todo |
-| 25 | **Hotel / Airbnb Reservation** | Availability calendar modelling, overlapping date-range queries, search + filter at scale, pricing service, cancellation & consistency | todo |
-| 26 | **E-commerce Checkout & Inventory** | Cart service, inventory reservation vs oversell, distributed transaction via Saga, order state machine, catalog search, flash-sale handling | todo |
-| 27 | **Payment System / Digital Wallet** | Double-entry ledger, idempotency keys, PSP integration + webhooks, reconciliation, exactly-once money movement, PCI scope, audit trail | todo |
-| 28 | **Stock Exchange / Matching Engine** | Single-threaded matching for determinism, order book data structure, sequencer + replicated log, latency budget (µs), market data fan-out, failover without losing order | todo |
-| 29 | **Fraud / Abuse Detection** | Streaming feature computation, feature store online/offline skew, model serving latency, rules vs ML, feedback loop, false-positive cost | todo |
+| 21 | **[Proximity Service / Yelp (Nearby)](docs/case-studies/21-proximity-service.md)** | Geohash vs quadtree vs S2/H3, boundary problem, index update rate, ranking + filtering, read replica geo-distribution | todo |
+| 22 | **[Uber / Ride-Hailing Dispatch](docs/case-studies/22-ride-hailing.md)** | Driver location ingest (high write rate), matching algorithm & latency budget, surge computation, state machine for trips, ETA service, exactly-once dispatch | todo |
+| 23 | **[Google Maps / Routing](docs/case-studies/23-google-maps.md)** | Map tiling & serving, graph partitioning, contraction hierarchies, live traffic ingestion, ETA modelling, offline map packs | todo |
+| 24 | **[Ticketmaster / Event Booking](docs/case-studies/24-ticket-booking.md)** | Inventory reservation & holds, oversell prevention, virtual waiting room, thundering herd on drop, payment coordination, idempotent booking | todo |
+| 25 | **[Hotel / Airbnb Reservation](docs/case-studies/25-hotel-reservation.md)** | Availability calendar modelling, overlapping date-range queries, search + filter at scale, pricing service, cancellation & consistency | todo |
+| 26 | **[E-commerce Checkout & Inventory](docs/case-studies/26-ecommerce-checkout.md)** | Cart service, inventory reservation vs oversell, distributed transaction via Saga, order state machine, catalog search, flash-sale handling | todo |
+| 27 | **[Payment System / Digital Wallet](docs/case-studies/27-payment-system.md)** | Double-entry ledger, idempotency keys, PSP integration + webhooks, reconciliation, exactly-once money movement, PCI scope, audit trail | todo |
+| 28 | **[Stock Exchange / Matching Engine](docs/case-studies/28-stock-exchange.md)** | Single-threaded matching for determinism, order book data structure, sequencer + replicated log, latency budget (µs), market data fan-out, failover without losing order | todo |
+| 29 | **[Fraud / Abuse Detection](docs/case-studies/29-fraud-detection.md)** | Streaming feature computation, feature store online/offline skew, model serving latency, rules vs ML, feedback loop, false-positive cost | todo |
 
 ### E. Infrastructure & Platform (highest value for SRE candidates)
 
 | # | Design | Deep dives that matter | Status |
 |---|---|---|---|
-| 30 | **Distributed Message Queue (Kafka-like)** | Partitioned log, leader/ISR replication, ack levels & durability, consumer offsets, rebalancing, retention/compaction, tiered storage | todo |
-| 31 | **Metrics & Monitoring System (Prometheus/Datadog)** | Ingest path, TSDB compression (Gorilla/delta-of-delta), cardinality explosion control, downsampling & retention, query fan-out, HA scrape/dedup | todo |
-| 32 | **Distributed Logging (ELK / Loki)** | Ingest buffering, structured logs, index vs label-only, hot/warm/cold tiers, retention cost, PII scrubbing, query at petabyte scale | todo |
-| 33 | **Distributed Tracing (Jaeger / Zipkin)** | Context propagation, head vs tail sampling, span storage & cardinality, trace assembly, dependency graph generation, overhead budget | todo |
-| 34 | **Alerting & On-Call Paging (PagerDuty)** | Dedup & grouping, escalation policy engine, schedule/rotation computation, notification reliability (must not fail with the platform), flapping suppression | todo |
-| 35 | **Distributed Cache Service (Redis at scale)** | Cluster topology & slot migration, hot-key mitigation, eviction policy, persistence trade-offs, failover & split-brain, multi-tenant noisy neighbours | todo |
-| 36 | **CDN Design** | PoP hierarchy & tiered caching, cache key normalization, purge propagation, origin protection, TLS termination at edge, log collection from edge | todo |
-| 37 | **Distributed Job Scheduler / Cron** | Leader election, exactly-once triggering, missed-run policy, DAG dependencies, long-running job checkpointing, tenant fairness & isolation | todo |
-| 38 | **Container Orchestrator / Cluster Scheduler** | Declarative reconciliation loops, scheduling constraints & bin-packing, etcd as the bottleneck, node lifecycle, autoscaling, resource overcommit | todo |
-| 39 | **CI/CD Platform at Scale** | Build graph & caching, runner fleet autoscaling, artifact store, hermetic builds, deployment orchestration, supply-chain security (SLSA/provenance) | todo |
-| 40 | **Feature Flag & Config Service** | Low-latency evaluation (SDK-local), propagation & consistency, targeting rules, kill-switch guarantees, audit, failing safe when control plane is down | todo |
+| 30 | **[Distributed Message Queue (Kafka-like)](docs/case-studies/30-message-queue-kafka.md)** | Partitioned log, leader/ISR replication, ack levels & durability, consumer offsets, rebalancing, retention/compaction, tiered storage | todo |
+| 31 | **[Metrics & Monitoring System (Prometheus/Datadog)](docs/case-studies/31-metrics-monitoring.md)** | Ingest path, TSDB compression (Gorilla/delta-of-delta), cardinality explosion control, downsampling & retention, query fan-out, HA scrape/dedup | todo |
+| 32 | **[Distributed Logging (ELK / Loki)](docs/case-studies/32-distributed-logging.md)** | Ingest buffering, structured logs, index vs label-only, hot/warm/cold tiers, retention cost, PII scrubbing, query at petabyte scale | todo |
+| 33 | **[Distributed Tracing (Jaeger / Zipkin)](docs/case-studies/33-distributed-tracing.md)** | Context propagation, head vs tail sampling, span storage & cardinality, trace assembly, dependency graph generation, overhead budget | todo |
+| 34 | **[Alerting & On-Call Paging (PagerDuty)](docs/case-studies/34-alerting-paging.md)** | Dedup & grouping, escalation policy engine, schedule/rotation computation, notification reliability (must not fail with the platform), flapping suppression | todo |
+| 35 | **[Distributed Cache Service (Redis at scale)](docs/case-studies/35-distributed-cache.md)** | Cluster topology & slot migration, hot-key mitigation, eviction policy, persistence trade-offs, failover & split-brain, multi-tenant noisy neighbours | todo |
+| 36 | **[CDN Design](docs/case-studies/36-cdn-design.md)** | PoP hierarchy & tiered caching, cache key normalization, purge propagation, origin protection, TLS termination at edge, log collection from edge | todo |
+| 37 | **[Distributed Job Scheduler / Cron](docs/case-studies/37-job-scheduler.md)** | Leader election, exactly-once triggering, missed-run policy, DAG dependencies, long-running job checkpointing, tenant fairness & isolation | todo |
+| 38 | **[Container Orchestrator / Cluster Scheduler](docs/case-studies/38-container-orchestrator.md)** | Declarative reconciliation loops, scheduling constraints & bin-packing, etcd as the bottleneck, node lifecycle, autoscaling, resource overcommit | todo |
+| 39 | **[CI/CD Platform at Scale](docs/case-studies/39-cicd-platform.md)** | Build graph & caching, runner fleet autoscaling, artifact store, hermetic builds, deployment orchestration, supply-chain security (SLSA/provenance) | todo |
+| 40 | **[Feature Flag & Config Service](docs/case-studies/40-feature-flag-service.md)** | Low-latency evaluation (SDK-local), propagation & consistency, targeting rules, kill-switch guarantees, audit, failing safe when control plane is down | todo |
 
 ### F. Stretch / Differentiator Designs
 
 | # | Design | Deep dives that matter | Status |
 |---|---|---|---|
-| 41 | **Collaborative Editor (Google Docs)** | OT vs CRDT, cursor/presence, offline merge, document history & compaction, per-doc server affinity | todo |
-| 42 | **Ad Click Aggregation / Real-time Analytics** | Stream processing (windowing, watermarks), exactly-once sinks, late/duplicate events, lambda vs kappa, reconciliation with batch | todo |
-| 43 | **Web Analytics (Google Analytics)** | Event collection at edge, sessionization, approximate distinct counts (HLL), pre-aggregated rollups, OLAP query serving | todo |
-| 44 | **Leaderboard / Gaming Ranking** | Sorted-set sharding, approximate ranking at scale, time-window leaderboards, hot update contention, anti-cheat | todo |
-| 45 | **API Gateway / Service Mesh** | Routing, authN offload, rate limiting, mTLS & cert rotation, sidecar vs sidecar-less, control-plane/data-plane split, config propagation latency | todo |
-| 46 | **Distributed Coordination Service (ZooKeeper/Chubby)** | Consensus core, sessions & ephemeral nodes, leases + fencing, watch fan-out, why it's a coordination store and not a database | todo |
-| 47 | **Secrets Management (Vault-like)** | Sealed storage & unseal quorum, dynamic short-lived credentials, identity-based auth, rotation without downtime, audit device, availability during outage | todo |
-| 48 | **ML Inference / Recommendation Serving** | Candidate generation → ranking funnel, feature store, embedding retrieval (ANN), model rollout & shadow traffic, GPU batching, latency SLO | todo |
+| 41 | **[Collaborative Editor (Google Docs)](docs/case-studies/41-collaborative-editor.md)** | OT vs CRDT, cursor/presence, offline merge, document history & compaction, per-doc server affinity | todo |
+| 42 | **[Ad Click Aggregation / Real-time Analytics](docs/case-studies/42-ad-click-aggregation.md)** | Stream processing (windowing, watermarks), exactly-once sinks, late/duplicate events, lambda vs kappa, reconciliation with batch | todo |
+| 43 | **[Web Analytics (Google Analytics)](docs/case-studies/43-web-analytics.md)** | Event collection at edge, sessionization, approximate distinct counts (HLL), pre-aggregated rollups, OLAP query serving | todo |
+| 44 | **[Leaderboard / Gaming Ranking](docs/case-studies/44-leaderboard.md)** | Sorted-set sharding, approximate ranking at scale, time-window leaderboards, hot update contention, anti-cheat | todo |
+| 45 | **[API Gateway / Service Mesh](docs/case-studies/45-api-gateway-service-mesh.md)** | Routing, authN offload, rate limiting, mTLS & cert rotation, sidecar vs sidecar-less, control-plane/data-plane split, config propagation latency | todo |
+| 46 | **[Distributed Coordination Service (ZooKeeper/Chubby)](docs/case-studies/46-coordination-service.md)** | Consensus core, sessions & ephemeral nodes, leases + fencing, watch fan-out, why it's a coordination store and not a database | todo |
+| 47 | **[Secrets Management (Vault-like)](docs/case-studies/47-secrets-management.md)** | Sealed storage & unseal quorum, dynamic short-lived credentials, identity-based auth, rotation without downtime, audit device, availability during outage | todo |
+| 48 | **[ML Inference / Recommendation Serving](docs/case-studies/48-ml-inference-serving.md)** | Candidate generation → ranking funnel, feature store, embedding retrieval (ANN), model rollout & shadow traffic, GPU batching, latency SLO | todo |
 
 > 48 designs listed; **items 01–40 are the core set** to have interview-ready.
 > Section F is for staying above the bar in follow-ups and for platform/infra-flavoured loops.
@@ -207,18 +211,18 @@ in generic system design material, and they are where 10 years of operational ex
 
 | # | Topic | What you must be able to design on a whiteboard | Status |
 |---|---|---|---|
-| S01 | Design an SLO for an existing service | SLI selection, measurement point (client vs server), window, burn-rate alerts, error budget policy | todo |
-| S02 | Multi-region active-active migration | Traffic routing, data replication topology, conflict handling, cutover plan, rollback, drill cadence | todo |
-| S03 | Zero-downtime schema & data migration | Expand/contract, dual-write + backfill + verify, shadow reads, cutover, rollback safety | todo |
-| S04 | Capacity planning for a 10x growth event | Load model, Little's Law, headroom, lead-time constraints, autoscaling limits, cost envelope | todo |
-| S05 | Global load shedding & brownout strategy | Priority tiers, adaptive concurrency, degradation ladder, criticality tagging, testing it | todo |
-| S06 | Incident response system design | Detection → paging → triage → comms → mitigation → postmortem; tooling and the data model behind it | todo |
-| S07 | Chaos / resilience testing platform | Fault injection primitives, blast radius controls, steady-state hypothesis, safety interlocks, scheduling | todo |
-| S08 | Deployment safety at scale | Canary analysis automation, staged rollout across cells/regions, automatic rollback triggers | todo |
-| S09 | Cell-based / bulkhead architecture | Cell sizing, routing & shuffle sharding, poison-pill containment, per-cell deploys, cost overhead | todo |
-| S10 | Cost / efficiency review of a large service | Unit economics, top cost drivers, tiering, right-sizing, spot strategy, measuring efficiency wins | todo |
-| S11 | Debug: "latency p99 tripled, no deploys" | Structured hypothesis tree: saturation, GC, dependency, network, cache, noisy neighbour, data skew | todo |
-| S12 | Design a self-healing/auto-remediation system | Signal quality, safe actions, rate limits on remediation, human-in-the-loop, feedback to postmortems | todo |
+| S01 | [Design an SLO for an existing service](docs/sre/s01-slo-design.md) | SLI selection, measurement point (client vs server), window, burn-rate alerts, error budget policy | todo |
+| S02 | [Multi-region active-active migration](docs/sre/s02-multi-region-active-active.md) | Traffic routing, data replication topology, conflict handling, cutover plan, rollback, drill cadence | todo |
+| S03 | [Zero-downtime schema & data migration](docs/sre/s03-zero-downtime-migration.md) | Expand/contract, dual-write + backfill + verify, shadow reads, cutover, rollback safety | todo |
+| S04 | [Capacity planning for a 10x growth event](docs/sre/s04-capacity-planning-10x.md) | Load model, Little's Law, headroom, lead-time constraints, autoscaling limits, cost envelope | todo |
+| S05 | [Global load shedding & brownout strategy](docs/sre/s05-load-shedding-brownout.md) | Priority tiers, adaptive concurrency, degradation ladder, criticality tagging, testing it | todo |
+| S06 | [Incident response system design](docs/sre/s06-incident-response-system.md) | Detection → paging → triage → comms → mitigation → postmortem; tooling and the data model behind it | todo |
+| S07 | [Chaos / resilience testing platform](docs/sre/s07-chaos-engineering-platform.md) | Fault injection primitives, blast radius controls, steady-state hypothesis, safety interlocks, scheduling | todo |
+| S08 | [Deployment safety at scale](docs/sre/s08-deployment-safety.md) | Canary analysis automation, staged rollout across cells/regions, automatic rollback triggers | todo |
+| S09 | [Cell-based / bulkhead architecture](docs/sre/s09-cell-based-architecture.md) | Cell sizing, routing & shuffle sharding, poison-pill containment, per-cell deploys, cost overhead | todo |
+| S10 | [Cost / efficiency review of a large service](docs/sre/s10-cost-efficiency-review.md) | Unit economics, top cost drivers, tiering, right-sizing, spot strategy, measuring efficiency wins | todo |
+| S11 | [Debug: "latency p99 tripled, no deploys"](docs/sre/s11-latency-debugging.md) | Structured hypothesis tree: saturation, GC, dependency, network, cache, noisy neighbour, data skew | todo |
+| S12 | [Design a self-healing/auto-remediation system](docs/sre/s12-auto-remediation.md) | Signal quality, safe actions, rate limits on remediation, human-in-the-loop, feedback to postmortems | todo |
 
 ---
 
